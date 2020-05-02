@@ -2,7 +2,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import apiai, json
 
-updater = Updater(token='1150717031:AAHrSmnaIL8KoPX_PibOYx9KLtl43jgKIWo') # Токен API к Telegram
+updater = Updater(token='TOKEN') # Токен API к Telegram
 dispatcher = updater.dispatcher
 # Обработка команд
 
@@ -11,7 +11,7 @@ def startCommand(bot, update):
 	
 	
 def textMessage(bot, update):
-    request = apiai.ApiAI('187c0b55f51a426f97d0eeeba3ec2def').text_request() # Токен API к Dialogflow
+    request = apiai.ApiAI('TOKENDIALOG').text_request() # Токен API к Dialogflow
     request.lang = 'ru' # На каком языке будет послан запрос
     request.session_id = 'AI_Helperbot' # ID Сессии диалога (нужно, чтобы потом учить бота)
     request.query = update.message.text # Посылаем запрос к ИИ с сообщением от юзера
